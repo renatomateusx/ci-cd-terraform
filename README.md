@@ -1,16 +1,20 @@
-Pipeline de CI/CD com Jenkins e Terraform
+## Pipeline de CI/CD com Jenkins e Terraform
 Este projeto demonstra como configurar um pipeline de Integração e Entrega Contínua (CI/CD) utilizando Jenkins para automatizar o deploy de uma aplicação, além de provisionar a infraestrutura necessária com Terraform.
 
-Descrição do Processo
+## Descrição do Processo
 O pipeline de CI/CD automatiza todo o processo de deploy de uma aplicação e o provisionamento da infraestrutura na nuvem. O processo é dividido em diversas etapas (stages) que são executadas automaticamente pelo Jenkins.
 
-Principais Etapas
+## Principais Etapas
 Checkout do Código da Aplicação: Jenkins faz o checkout do repositório onde o código da aplicação está armazenado.
 Checkout do Código de Infraestrutura: Jenkins também faz o checkout do repositório contendo o código de infraestrutura (arquivos Terraform).
 Provisionamento de Infraestrutura: Utilizando os arquivos Terraform, o Jenkins provisiona a infraestrutura necessária (servidores, redes, etc.) na nuvem.
-Build e Deploy da Aplicação: A aplicação é construída usando Docker e é implantada em containers.
-Notificações e Logs: Jenkins exibe o status do pipeline ao final do processo, indicando sucesso ou falha.
-Requisitos
+
+## Build e Deploy da Aplicação: 
+A aplicação é construída usando Docker e é implantada em containers.
+## Notificações e Logs: J
+enkins exibe o status do pipeline ao final do processo, indicando sucesso ou falha.
+
+## Requisitos
 Para rodar este pipeline, você precisará garantir que os seguintes requisitos estão configurados:
 
 Jenkins instalado e configurado.
