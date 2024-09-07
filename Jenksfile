@@ -1,0 +1,49 @@
+pipeline {
+    agent any
+
+    stages {
+        // 1. Checkout do código da aplicação
+        stage('Checkout Code') {
+            steps {
+                git 'https://github.com/yourusername/my-app-repo.git' // Repositório da aplicação
+            }
+        }
+
+        // 2. Checkout do código de infraestrutura (Terraform)
+        stage('Checkout Terraform Code') {
+            steps {
+                git 'https://github.com/yourusername/ci-cd-terraform.git' // Repositório da infra
+            }
+        }
+
+         // 3. Inicializar e aplicar a infraestrutura com Terraform
+        stage('Deploy Infrastructure') {
+            steps {
+                sh '''
+                cd infra-terraform-repo
+                terraform init
+                terraform apply -auto-approve
+                '''
+            }
+        }
+
+        // 4. Construir e implantar a aplicação usando Docker
+        stage('Build and Deploy Application') {
+            steps {
+                sh '''
+                docker build -t my-app .
+                docker run -d -p 80:80 my-app
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Deployment completed successfully!'
+        }
+        failure {
+            echo 'Deployment failed!'
+        }
+    }
+}
