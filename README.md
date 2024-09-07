@@ -11,8 +11,8 @@ Provisionamento de Infraestrutura: Utilizando os arquivos Terraform, o Jenkins p
 
 ## Build e Deploy da Aplicação: 
 A aplicação é construída usando Docker e é implantada em containers.
-## Notificações e Logs: J
-enkins exibe o status do pipeline ao final do processo, indicando sucesso ou falha.
+## Notificações e Logs: 
+Jenkins exibe o status do pipeline ao final do processo, indicando sucesso ou falha.
 
 ## Requisitos
 Para rodar este pipeline, você precisará garantir que os seguintes requisitos estão configurados:
